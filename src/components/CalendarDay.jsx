@@ -32,6 +32,7 @@ const propTypes = forbidExtraProps({
 });
 
 const defaultProps = {
+  teadFormat:"day",
   day: moment(),
   daySize: DAY_SIZE,
   isOutsideDay: false,
@@ -156,7 +157,13 @@ class CalendarDay extends React.PureComponent {
         onKeyDown={(e) => { this.onKeyDown(day, e); }}
         tabIndex={tabIndex}
       >
-        {renderDayContents ? renderDayContents(day, modifiers) : day.format('D')}
+        {(() => {
+          switch (teadsFormat) {
+            case "day":   return renderDayContents ? renderDayContents(day, modifiers) : day.format('D');
+            case "month": return renderDayContents ? renderDayContents(day, modifiers) : day.format('M');
+            default :   return renderDayContents ? renderDayContents(day, modifiers) : day.format('D');
+          }
+        })()}
       </td>
     );
   }

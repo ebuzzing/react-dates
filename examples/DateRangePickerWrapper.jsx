@@ -29,6 +29,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  teadsFormat:"day",
   // example props for the demo
   autoFocus: false,
   autoFocusEndDate: false,
@@ -145,6 +146,7 @@ class DateRangePickerWrapper extends React.Component {
           focusedInput={focusedInput}
           startDate={startDate}
           endDate={endDate}
+          teadsFormat="day"
         />
       </div>
     );

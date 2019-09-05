@@ -344,7 +344,7 @@ class CalendarMonthGrid extends React.PureComponent {
                 onMonthSelect={this.onMonthSelect}
                 onYearSelect={this.onYearSelect}
                 renderMonthText={renderMonthText}
-                renderCalendarDay={renderCalendarDay}
+                renderCalendarDay={renderCalendarDay} //todo d'ou  ?
                 renderDayContents={renderDayContents}
                 renderMonthElement={renderMonthElement}
                 firstDayOfWeek={firstDayOfWeek}
